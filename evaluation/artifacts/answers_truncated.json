@@ -1,0 +1,5 @@
+[
+  {"task_id":"overall","variant":"truncated","facts":{"record_count":null,"score_sum":null,"score_mean":null,"min_score":null,"max_score":null,"abnormal_count":null,"unit":"考试记录"}},
+  {"task_id":"student","variant":"truncated","facts":{"student_id":"S119","scores":null,"dates":null,"statuses":null,"abnormal_date":null,"abnormal_score":null}},
+  {"task_id":"compare","variant":"truncated","facts":{"a_count":null,"b_count":null,"a_sum":null,"b_sum":null,"a_mean":null,"b_mean":null,"higher_class":null,"unit":"考试记录"}}
+]

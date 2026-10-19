@@ -1,0 +1,5 @@
+[
+  {"task_id":"overall","variant":"compressed","facts":{"record_count":720,"score_sum":57490,"score_mean":79.847222222,"min_score":25,"max_score":100,"abnormal_count":1,"unit":"考试记录"}},
+  {"task_id":"student","variant":"compressed","facts":{"student_id":"S119","scores":[88,89,90,87,25,91],"dates":["2026-01-15","2026-02-15","2026-03-15","2026-04-15","2026-05-15","2026-06-15"],"statuses":["正常","正常","正常","正常","异常","正常"],"abnormal_date":"2026-05-15","abnormal_score":25}},
+  {"task_id":"compare","variant":"compressed","facts":{"a_count":360,"b_count":360,"a_sum":28694,"b_sum":28796,"a_mean":79.705555556,"b_mean":79.988888889,"higher_class":"乙班","unit":"考试记录"}}
+]

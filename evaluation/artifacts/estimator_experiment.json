@@ -1,0 +1,242 @@
+[
+  {
+    "encoding": "cl100k_base",
+    "sample": "fixture_raw",
+    "exact": 89326,
+    "current": 184882,
+    "lexical_5": 127498,
+    "lexical_6": 115258,
+    "lexical_7": 108778,
+    "lexical_8": 98698
+  },
+  {
+    "encoding": "cl100k_base",
+    "sample": "fixture_overall",
+    "exact": 2998,
+    "current": 4873,
+    "lexical_5": 3519,
+    "lexical_6": 3392,
+    "lexical_7": 3296,
+    "lexical_8": 3259
+  },
+  {
+    "encoding": "cl100k_base",
+    "sample": "fixture_student",
+    "exact": 3212,
+    "current": 5164,
+    "lexical_5": 3738,
+    "lexical_6": 3611,
+    "lexical_7": 3513,
+    "lexical_8": 3476
+  },
+  {
+    "encoding": "cl100k_base",
+    "sample": "fixture_compare",
+    "exact": 14472,
+    "current": 17276,
+    "lexical_5": 15764,
+    "lexical_6": 15640,
+    "lexical_7": 15551,
+    "lexical_8": 15514
+  },
+  {
+    "encoding": "cl100k_base",
+    "sample": "english",
+    "exact": 1001,
+    "current": 2200,
+    "lexical_5": 1600,
+    "lexical_6": 1400,
+    "lexical_7": 1300,
+    "lexical_8": 1100
+  },
+  {
+    "encoding": "cl100k_base",
+    "sample": "chinese",
+    "exact": 3400,
+    "current": 4350,
+    "lexical_5": 3775,
+    "lexical_6": 3775,
+    "lexical_7": 3775,
+    "lexical_8": 3775
+  },
+  {
+    "encoding": "cl100k_base",
+    "sample": "identifiers",
+    "exact": 3055,
+    "current": 3401,
+    "lexical_5": 3376,
+    "lexical_6": 3373,
+    "lexical_7": 3269,
+    "lexical_8": 3269
+  },
+  {
+    "encoding": "cl100k_base",
+    "sample": "matrix",
+    "exact": 2001,
+    "current": 2159,
+    "lexical_5": 2001,
+    "lexical_6": 2001,
+    "lexical_7": 2001,
+    "lexical_8": 2001
+  },
+  {
+    "encoding": "cl100k_base",
+    "sample": "unicode",
+    "exact": 2001,
+    "current": 3451,
+    "lexical_5": 2426,
+    "lexical_6": 2426,
+    "lexical_7": 2426,
+    "lexical_8": 2426
+  },
+  {
+    "encoding": "cl100k_base",
+    "sample": "pretty",
+    "exact": 3062,
+    "current": 5535,
+    "lexical_5": 4283,
+    "lexical_6": 3943,
+    "lexical_7": 3763,
+    "lexical_8": 3483
+  },
+  {
+    "encoding": "cl100k_base",
+    "sample": "long_string",
+    "exact": 379,
+    "current": 1009,
+    "lexical_5": 604,
+    "lexical_6": 504,
+    "lexical_7": 433,
+    "lexical_8": 379
+  },
+  {
+    "encoding": "cl100k_base",
+    "sample": "high_entropy",
+    "exact": 2008,
+    "current": 1009,
+    "lexical_5": 1397,
+    "lexical_6": 1351,
+    "lexical_7": 1329,
+    "lexical_8": 1305
+  },
+  {
+    "encoding": "o200k_base",
+    "sample": "fixture_raw",
+    "exact": 85715,
+    "current": 184882,
+    "lexical_5": 127498,
+    "lexical_6": 115258,
+    "lexical_7": 108778,
+    "lexical_8": 98698
+  },
+  {
+    "encoding": "o200k_base",
+    "sample": "fixture_overall",
+    "exact": 2834,
+    "current": 4873,
+    "lexical_5": 3519,
+    "lexical_6": 3392,
+    "lexical_7": 3296,
+    "lexical_8": 3259
+  },
+  {
+    "encoding": "o200k_base",
+    "sample": "fixture_student",
+    "exact": 3028,
+    "current": 5164,
+    "lexical_5": 3738,
+    "lexical_6": 3611,
+    "lexical_7": 3513,
+    "lexical_8": 3476
+  },
+  {
+    "encoding": "o200k_base",
+    "sample": "fixture_compare",
+    "exact": 14203,
+    "current": 17276,
+    "lexical_5": 15764,
+    "lexical_6": 15640,
+    "lexical_7": 15551,
+    "lexical_8": 15514
+  },
+  {
+    "encoding": "o200k_base",
+    "sample": "english",
+    "exact": 1001,
+    "current": 2200,
+    "lexical_5": 1600,
+    "lexical_6": 1400,
+    "lexical_7": 1300,
+    "lexical_8": 1100
+  },
+  {
+    "encoding": "o200k_base",
+    "sample": "chinese",
+    "exact": 1900,
+    "current": 4350,
+    "lexical_5": 3775,
+    "lexical_6": 3775,
+    "lexical_7": 3775,
+    "lexical_8": 3775
+  },
+  {
+    "encoding": "o200k_base",
+    "sample": "identifiers",
+    "exact": 3063,
+    "current": 3401,
+    "lexical_5": 3376,
+    "lexical_6": 3373,
+    "lexical_7": 3269,
+    "lexical_8": 3269
+  },
+  {
+    "encoding": "o200k_base",
+    "sample": "matrix",
+    "exact": 2001,
+    "current": 2159,
+    "lexical_5": 2001,
+    "lexical_6": 2001,
+    "lexical_7": 2001,
+    "lexical_8": 2001
+  },
+  {
+    "encoding": "o200k_base",
+    "sample": "unicode",
+    "exact": 1401,
+    "current": 3451,
+    "lexical_5": 2426,
+    "lexical_6": 2426,
+    "lexical_7": 2426,
+    "lexical_8": 2426
+  },
+  {
+    "encoding": "o200k_base",
+    "sample": "pretty",
+    "exact": 2962,
+    "current": 5535,
+    "lexical_5": 4283,
+    "lexical_6": 3943,
+    "lexical_7": 3763,
+    "lexical_8": 3483
+  },
+  {
+    "encoding": "o200k_base",
+    "sample": "long_string",
+    "exact": 379,
+    "current": 1009,
+    "lexical_5": 604,
+    "lexical_6": 504,
+    "lexical_7": 433,
+    "lexical_8": 379
+  },
+  {
+    "encoding": "o200k_base",
+    "sample": "high_entropy",
+    "exact": 1976,
+    "current": 1009,
+    "lexical_5": 1397,
+    "lexical_6": 1351,
+    "lexical_7": 1329,
+    "lexical_8": 1305
+  }
+]

@@ -1,0 +1,323 @@
+{
+  "kind": "model_answer_scoring",
+  "synthetic": true,
+  "note": "Completion measures non-null requested fields, not correctness. Missing fields and paired regressions are proxies; no causal attribution is claimed.",
+  "aggregate_micro": {
+    "raw": {
+      "scored_cases": 3,
+      "correct_facts": 21,
+      "total_facts": 21,
+      "key_fact_accuracy": 1.0,
+      "numeric_accuracy": 1.0,
+      "numeric_scope_accuracy": 1.0,
+      "completion": 1.0,
+      "all_correct_cases": 3
+    },
+    "truncated": {
+      "scored_cases": 3,
+      "correct_facts": 3,
+      "total_facts": 21,
+      "key_fact_accuracy": 0.14285714285714285,
+      "numeric_accuracy": 0.0,
+      "numeric_scope_accuracy": 0.125,
+      "completion": 0.1428571428571429,
+      "all_correct_cases": 0
+    },
+    "compressed": {
+      "scored_cases": 3,
+      "correct_facts": 21,
+      "total_facts": 21,
+      "key_fact_accuracy": 1.0,
+      "numeric_accuracy": 1.0,
+      "numeric_scope_accuracy": 1.0,
+      "completion": 1.0,
+      "all_correct_cases": 3
+    }
+  },
+  "results": [
+    {
+      "task_id": "overall",
+      "variant": "raw",
+      "status": "scored",
+      "key_fact_accuracy": 1.0,
+      "adapter_error": null,
+      "numeric_scope_accuracy": 1.0,
+      "completion": 1.0,
+      "missing_fields": [],
+      "per_fact": {
+        "record_count": true,
+        "score_sum": true,
+        "score_mean": true,
+        "min_score": true,
+        "max_score": true,
+        "abnormal_count": true,
+        "unit": true
+      },
+      "all_correct": true,
+      "prompt_file": "overall.raw.prompt.txt",
+      "context_chars": 429210,
+      "context_tokens": 98698,
+      "prompt_tokens": 99047,
+      "facts_correct_raw_but_wrong_here": []
+    },
+    {
+      "task_id": "overall",
+      "variant": "truncated",
+      "status": "scored",
+      "key_fact_accuracy": 0.14285714285714285,
+      "adapter_error": null,
+      "numeric_scope_accuracy": 0.14285714285714285,
+      "completion": 0.1428571428571429,
+      "missing_fields": [
+        "record_count",
+        "score_sum",
+        "score_mean",
+        "min_score",
+        "max_score",
+        "abnormal_count"
+      ],
+      "per_fact": {
+        "record_count": false,
+        "score_sum": false,
+        "score_mean": false,
+        "min_score": false,
+        "max_score": false,
+        "abnormal_count": false,
+        "unit": true
+      },
+      "all_correct": false,
+      "prompt_file": "overall.truncated.prompt.txt",
+      "context_chars": 14049,
+      "context_tokens": 3286,
+      "prompt_tokens": 3635,
+      "facts_correct_raw_but_wrong_here": [
+        "record_count",
+        "score_sum",
+        "score_mean",
+        "min_score",
+        "max_score",
+        "abnormal_count"
+      ]
+    },
+    {
+      "task_id": "overall",
+      "variant": "compressed",
+      "status": "scored",
+      "key_fact_accuracy": 1.0,
+      "adapter_error": null,
+      "numeric_scope_accuracy": 1.0,
+      "completion": 1.0,
+      "missing_fields": [],
+      "per_fact": {
+        "record_count": true,
+        "score_sum": true,
+        "score_mean": true,
+        "min_score": true,
+        "max_score": true,
+        "abnormal_count": true,
+        "unit": true
+      },
+      "all_correct": true,
+      "prompt_file": "overall.compressed.prompt.txt",
+      "context_chars": 8315,
+      "context_tokens": 3286,
+      "prompt_tokens": 3636,
+      "facts_correct_raw_but_wrong_here": []
+    },
+    {
+      "task_id": "student",
+      "variant": "raw",
+      "status": "scored",
+      "key_fact_accuracy": 1.0,
+      "adapter_error": null,
+      "numeric_scope_accuracy": 1.0,
+      "completion": 1.0,
+      "missing_fields": [],
+      "per_fact": {
+        "student_id": true,
+        "scores": true,
+        "dates": true,
+        "statuses": true,
+        "abnormal_date": true,
+        "abnormal_score": true
+      },
+      "all_correct": true,
+      "prompt_file": "student.raw.prompt.txt",
+      "context_chars": 429210,
+      "context_tokens": 98698,
+      "prompt_tokens": 99047,
+      "facts_correct_raw_but_wrong_here": []
+    },
+    {
+      "task_id": "student",
+      "variant": "truncated",
+      "status": "scored",
+      "key_fact_accuracy": 0.16666666666666666,
+      "adapter_error": null,
+      "numeric_scope_accuracy": 0.0,
+      "completion": 0.16666666666666663,
+      "missing_fields": [
+        "scores",
+        "dates",
+        "statuses",
+        "abnormal_date",
+        "abnormal_score"
+      ],
+      "per_fact": {
+        "student_id": true,
+        "scores": false,
+        "dates": false,
+        "statuses": false,
+        "abnormal_date": false,
+        "abnormal_score": false
+      },
+      "all_correct": false,
+      "prompt_file": "student.truncated.prompt.txt",
+      "context_chars": 15031,
+      "context_tokens": 3502,
+      "prompt_tokens": 3851,
+      "facts_correct_raw_but_wrong_here": [
+        "scores",
+        "dates",
+        "statuses",
+        "abnormal_date",
+        "abnormal_score"
+      ]
+    },
+    {
+      "task_id": "student",
+      "variant": "compressed",
+      "status": "scored",
+      "key_fact_accuracy": 1.0,
+      "adapter_error": null,
+      "numeric_scope_accuracy": 1.0,
+      "completion": 1.0,
+      "missing_fields": [],
+      "per_fact": {
+        "student_id": true,
+        "scores": true,
+        "dates": true,
+        "statuses": true,
+        "abnormal_date": true,
+        "abnormal_score": true
+      },
+      "all_correct": true,
+      "prompt_file": "student.compressed.prompt.txt",
+      "context_chars": 8723,
+      "context_tokens": 3503,
+      "prompt_tokens": 3852,
+      "facts_correct_raw_but_wrong_here": []
+    },
+    {
+      "task_id": "compare",
+      "variant": "raw",
+      "status": "scored",
+      "key_fact_accuracy": 1.0,
+      "adapter_error": null,
+      "numeric_scope_accuracy": 1.0,
+      "completion": 1.0,
+      "missing_fields": [],
+      "per_fact": {
+        "a_count": true,
+        "b_count": true,
+        "a_sum": true,
+        "b_sum": true,
+        "a_mean": true,
+        "b_mean": true,
+        "higher_class": true,
+        "unit": true
+      },
+      "all_correct": true,
+      "prompt_file": "compare.raw.prompt.txt",
+      "context_chars": 429210,
+      "context_tokens": 98698,
+      "prompt_tokens": 99125,
+      "facts_correct_raw_but_wrong_here": []
+    },
+    {
+      "task_id": "compare",
+      "variant": "truncated",
+      "status": "scored",
+      "key_fact_accuracy": 0.125,
+      "adapter_error": null,
+      "numeric_scope_accuracy": 0.14285714285714285,
+      "completion": 0.125,
+      "missing_fields": [
+        "a_count",
+        "b_count",
+        "a_sum",
+        "b_sum",
+        "a_mean",
+        "b_mean",
+        "higher_class"
+      ],
+      "per_fact": {
+        "a_count": false,
+        "b_count": false,
+        "a_sum": false,
+        "b_sum": false,
+        "a_mean": false,
+        "b_mean": false,
+        "higher_class": false,
+        "unit": true
+      },
+      "all_correct": false,
+      "prompt_file": "compare.truncated.prompt.txt",
+      "context_chars": 67445,
+      "context_tokens": 15546,
+      "prompt_tokens": 15973,
+      "facts_correct_raw_but_wrong_here": [
+        "a_count",
+        "b_count",
+        "a_sum",
+        "b_sum",
+        "a_mean",
+        "b_mean",
+        "higher_class"
+      ]
+    },
+    {
+      "task_id": "compare",
+      "variant": "compressed",
+      "status": "scored",
+      "key_fact_accuracy": 1.0,
+      "adapter_error": null,
+      "numeric_scope_accuracy": 1.0,
+      "completion": 1.0,
+      "missing_fields": [],
+      "per_fact": {
+        "a_count": true,
+        "b_count": true,
+        "a_sum": true,
+        "b_sum": true,
+        "a_mean": true,
+        "b_mean": true,
+        "higher_class": true,
+        "unit": true
+      },
+      "all_correct": true,
+      "prompt_file": "compare.compressed.prompt.txt",
+      "context_chars": 29227,
+      "context_tokens": 15546,
+      "prompt_tokens": 15973,
+      "facts_correct_raw_but_wrong_here": []
+    }
+  ],
+  "experiment": {
+    "model": "Codex inherited parent-default model; same configuration in all three conditions",
+    "reasoning_effort": "inherited, unchanged between conditions",
+    "repeats": 1,
+    "delivery": "Independent Codex subagents; file transport in fixed character chunks.",
+    "tools": "Only reading input files and writing answers; programmatic calculation prohibited.",
+    "raw_initial_attempt": "Excluded: direct tool output was truncated; full-read rerun used.",
+    "limitations": [
+      "Three synthetic tasks over one high-redundancy dataset, not production traffic.",
+      "Inputs delivered through agent file tools, not a single production API prompt.",
+      "No model/API token usage meter; all reported tokens use the module heuristic.",
+      "Strict unit string scoring includes prompt-copying format errors.",
+      "Compare task may exceed requested compression budget; size and quality are reported separately."
+    ]
+  },
+  "input_validation": "SHA-256 and contiguous emitted-chunk coverage, with unsuppressed bounded tool output required",
+  "use_for_final_metrics": true
+}

@@ -1,0 +1,4 @@
+# Preserve hashes for released fixtures and archived evaluation evidence.
+datasets/**/*.json -text
+evaluation/artifacts/* -text -whitespace
+artifacts/example*.json -text

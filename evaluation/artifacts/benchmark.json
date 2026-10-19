@@ -1,0 +1,96 @@
+{
+  "python": "3.14.4",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "iterations_per_size": 3,
+  "includes": "serialization, parsing, compression, estimated token counting",
+  "note": "Warm process, synthetic repeated metadata; no LLM latency measured.",
+  "results": [
+    {
+      "rows": 1000,
+      "seconds": [
+        0.15239990000554826,
+        0.13466409999819007,
+        0.13246729999082163
+      ],
+      "median_seconds": 0.13466409999819007,
+      "original_chars": 555034,
+      "compressed_chars": 6535,
+      "original_tokens_estimated": 121004,
+      "compressed_tokens_estimated": 2359,
+      "within_budget": true,
+      "stats": {
+        "mode": "report",
+        "counter": "estimated",
+        "tables": 1,
+        "source_rows": 1000,
+        "retained_rows": 4,
+        "target_rows": 0,
+        "omitted_rows": 996,
+        "char_ratio": 84.93251721499617,
+        "token_ratio": 51.29461636286562,
+        "reason": "target_met",
+        "missing_selectors": [],
+        "source_sha256": "6d9031f83f67a5ec4d4965fa63da80ee453f1dd5073a5a99102fbfd9949f1013",
+        "output_format": "edu-context/2"
+      }
+    },
+    {
+      "rows": 5000,
+      "seconds": [
+        0.6238300000113668,
+        0.6478780000034021,
+        0.6378975999978138
+      ],
+      "median_seconds": 0.6378975999978138,
+      "original_chars": 2775131,
+      "compressed_chars": 6573,
+      "original_tokens_estimated": 605004,
+      "compressed_tokens_estimated": 2387,
+      "within_budget": true,
+      "stats": {
+        "mode": "report",
+        "counter": "estimated",
+        "tables": 1,
+        "source_rows": 5000,
+        "retained_rows": 4,
+        "target_rows": 0,
+        "omitted_rows": 4996,
+        "char_ratio": 422.2015822303362,
+        "token_ratio": 253.4578969417679,
+        "reason": "target_met",
+        "missing_selectors": [],
+        "source_sha256": "926f964c93c472dee0a0328086c4aed2bbc40e37272653a9c1921b0d62f5b0ae",
+        "output_format": "edu-context/2"
+      }
+    },
+    {
+      "rows": 10000,
+      "seconds": [
+        1.272953099993174,
+        1.2834750000038184,
+        1.2844612000044435
+      ],
+      "median_seconds": 1.2834750000038184,
+      "original_chars": 5550253,
+      "compressed_chars": 6594,
+      "original_tokens_estimated": 1210004,
+      "compressed_tokens_estimated": 2388,
+      "within_budget": true,
+      "stats": {
+        "mode": "report",
+        "counter": "estimated",
+        "tables": 1,
+        "source_rows": 10000,
+        "retained_rows": 4,
+        "target_rows": 0,
+        "omitted_rows": 9996,
+        "char_ratio": 841.7126175310889,
+        "token_ratio": 506.70184254606363,
+        "reason": "target_met",
+        "missing_selectors": [],
+        "source_sha256": "b591023e9e9c18cfc964bcd66dfa40d0017e3e8657bd9c10410a674e69b3a441",
+        "output_format": "edu-context/2"
+      }
+    }
+  ]
+}

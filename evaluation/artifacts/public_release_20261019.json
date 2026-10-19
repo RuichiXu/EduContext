@@ -1,0 +1,69 @@
+{
+  "release_date": "2026-10-19",
+  "dataset": "production-derived de-identified exports",
+  "module_tests_passed": 69,
+  "evaluation_tests_passed": 6,
+  "unchanged_nonidentifying_source_cells_checked": 4279,
+  "publication_review": {
+    "known_original_names_detected": 0,
+    "original_business_ids_detected": 0,
+    "credential_patterns_detected": 0,
+    "review_scope": "Explicit staged files and the two reviewed export schemas; not a general PII certification."
+  },
+  "o200k_checks": [
+    {
+      "file": "student_list.json",
+      "variant": "numeric",
+      "triggered": true,
+      "original_tokens": 293684,
+      "compressed_tokens": 17231,
+      "within_budget": true,
+      "records_exact": true
+    },
+    {
+      "file": "student_list.json",
+      "variant": "target",
+      "triggered": true,
+      "original_tokens": 293684,
+      "compressed_tokens": 17895,
+      "within_budget": true,
+      "records_exact": true
+    },
+    {
+      "file": "student_list.json",
+      "variant": "full_text",
+      "triggered": true,
+      "original_tokens": 293684,
+      "compressed_tokens": 253385,
+      "within_budget": false,
+      "records_exact": true
+    },
+    {
+      "file": "student_activities.json",
+      "variant": "numeric",
+      "triggered": false,
+      "original_tokens": 9112,
+      "compressed_tokens": 9112,
+      "within_budget": true,
+      "records_exact": true
+    },
+    {
+      "file": "student_activities.json",
+      "variant": "target",
+      "triggered": false,
+      "original_tokens": 9112,
+      "compressed_tokens": 9112,
+      "within_budget": true,
+      "records_exact": true
+    },
+    {
+      "file": "student_activities.json",
+      "variant": "full_text",
+      "triggered": false,
+      "original_tokens": 9112,
+      "compressed_tokens": 9112,
+      "within_budget": true,
+      "records_exact": true
+    }
+  ]
+}

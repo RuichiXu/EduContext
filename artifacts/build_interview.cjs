@@ -1,0 +1,21 @@
+const fs = require('fs');
+const path = require('path');
+// Optional documentation renderer; install `marked` locally or provide its module directory.
+const deps = process.env.EDUCONTEXT_NODE_MODULES;
+const {marked} = deps ? require(path.join(deps, 'marked')) : require('marked');
+const root = path.resolve(__dirname, '..');
+const source = fs.readFileSync(path.join(root, 'docs/学情分析Agent面试手册.md'),'utf8');
+let body=marked.parse(source);
+let index=0;
+const links=[];
+body=body.replace(/<h2>(.*?)<\/h2>/g,(_,title)=>{const id='chapter-'+(++index);links.push(`<a href="#${id}">${title}</a>`);return `<h2 id="${id}">${title}</h2>`;});
+const html=`<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>学情分析与报告生成 Agent 面试手册</title><style>
+:root{color-scheme:light;--ink:#19232f;--muted:#566271;--line:#d9d9d9;--accent:#174c6c}*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:28px}body{margin:0;background:#f3f5f7;color:var(--ink);font-family:'Microsoft YaHei','Noto Sans CJK SC',sans-serif;line-height:1.85;font-size:16px}nav{position:fixed;inset:0 auto 0 0;width:270px;overflow:auto;padding:30px 22px;background:#fff;border-right:1px solid var(--line)}nav strong{display:block;color:#000;font-size:18px;margin-bottom:16px}nav a{display:block;color:#364858;text-decoration:none;font-size:13px;line-height:1.6;padding:9px 10px;border-radius:5px}nav a:hover{background:#e9f0f5;color:#102f42}.nav-note{font-size:12px;color:var(--muted);margin-top:22px}main{max-width:1040px;margin:30px 35px 70px 305px;background:white;padding:44px 58px 60px;border:1px solid #e2e7eb;border-radius:9px}h1,h2,h3{color:#000;line-height:1.45;scroll-margin-top:25px}h1{font-size:30px;margin:0 0 27px;font-weight:700}h2{font-size:24px;margin:52px 0 22px}h3{font-size:18px;margin:30px 0 12px}p{margin:0 0 15px;text-align:justify;overflow-wrap:anywhere}table{width:100%;border-collapse:collapse;font-size:13px;line-height:1.7;margin:22px 0 27px;table-layout:fixed}th,td{border:1px solid #d9d9d9;padding:11px 12px;vertical-align:middle;overflow-wrap:anywhere}th{background:#e8eff5;color:#000;text-align:left}tr:nth-child(even) td{background:#f7f9fb}td:first-child{width:26%}a{color:#174c6c}code{font-family:Consolas,monospace;font-size:.92em}button{border:1px solid #c5cfd6;background:#fff;padding:7px 13px;border-radius:5px;color:#243b4b;cursor:pointer}.toolbar{display:flex;gap:14px;align-items:center;margin-bottom:32px;color:#63717c;font-size:12px}.endnote{margin-top:40px;color:#566271;font-size:12px}
+@media(max-width:1050px){nav{width:215px;padding:20px 12px}main{margin-left:235px;margin-right:20px;padding:32px}}@media(max-width:720px){nav{position:static;width:100%;max-height:220px;border-right:0;border-bottom:1px solid var(--line)}main{margin:15px;padding:24px}h1{font-size:25px}table{font-size:12px}th,td{padding:7px}}
+@media print{@page{size:A4;margin:18mm 17mm}body{background:#fff;font-size:10.5pt;line-height:1.65}nav,.toolbar{display:none}main{max-width:none;border:0;margin:0;padding:0;box-shadow:none}h1{font-size:23pt}h2{font-size:17pt;margin:24pt 0 12pt;break-after:avoid}h3{font-size:12pt;margin:16pt 0 7pt;break-after:avoid}p{orphans:3;widows:3;margin-bottom:9pt}table{font-size:9pt;table-layout:auto}tr{break-inside:avoid}thead{display:table-header-group}th,td{padding:7pt}a{color:inherit;text-decoration:none}}
+</style></head><body><nav><strong>面试手册目录</strong>${links.join('')}<p class="nav-note">66 个问答 · 5 个业务案例<br>Ctrl + F 搜索关键词<br>真实业务基线为分批模型压缩再合成</p></nav><main><div class="toolbar"><button onclick="window.print()">打印或保存为 PDF</button><span>面试准备 · 2026 年 9 月 23 日</span></div>${body}</main></body></html>`;
+const target=path.join(root,'docs/学情分析Agent面试手册.html');fs.writeFileSync(target,html.replace('面试准备 · 2026 年 9 月 23 日','面试准备 · 2026 年 10 月 12 日更新'),'utf8');
+const q=[...source.matchAll(/^### Q(\d+)/gm)].map(x=>Number(x[1]));
+if(q.length!==66||new Set(q).size!==66)throw Error('Question count mismatch');
+for(const required of ['分批模型压缩后再合成','字段正确率','75%','97%','全流程业务'])if(!source.includes(required))throw Error(required);
+console.log(JSON.stringify({chapters:index,questions:q.length,characters:source.length,html:target}));

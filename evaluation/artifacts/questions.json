@@ -1,0 +1,41 @@
+[
+  {
+    "task_id": "overall",
+    "task": "生成整体学情报告，统计考试记录总数、成绩总和、按考试记录计算的平均分、最低分、最高分、异常状态记录数，并说明统计单位。",
+    "facts_schema": {
+      "record_count": "整数",
+      "score_sum": "数字",
+      "score_mean": "数字",
+      "min_score": "数字",
+      "max_score": "数字",
+      "abnormal_count": "整数",
+      "unit": "填写考试记录"
+    }
+  },
+  {
+    "task_id": "student",
+    "task": "分析学号 S119 的成绩异常，保留该学生六次考试按日期排序的成绩、日期及状态，给出异常日期和异常成绩。只回答已标记的异常。",
+    "facts_schema": {
+      "student_id": "字符串",
+      "scores": "按日期升序的数字数组",
+      "dates": "日期数组",
+      "statuses": "对应状态数组",
+      "abnormal_date": "字符串",
+      "abnormal_score": "数字"
+    }
+  },
+  {
+    "task_id": "compare",
+    "task": "对比甲班和乙班的数学考试情况。分别列出各班考试记录数、成绩总和、平均分，并指出平均分更高的班级。平均分按考试记录计算。",
+    "facts_schema": {
+      "a_count": "甲班考试记录数（整数）",
+      "b_count": "乙班考试记录数（整数）",
+      "a_sum": "甲班成绩总和（数字）",
+      "b_sum": "乙班成绩总和（数字）",
+      "a_mean": "甲班平均分（数字）",
+      "b_mean": "乙班平均分（数字）",
+      "higher_class": "班级名称",
+      "unit": "填写考试记录"
+    }
+  }
+]

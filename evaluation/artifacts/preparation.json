@@ -1,0 +1,148 @@
+{
+  "data_kind": "synthetic",
+  "rows": 720,
+  "counter": "estimated",
+  "cases": [
+    {
+      "id": "overall",
+      "task": "生成整体学情报告，统计考试记录总数、成绩总和、按考试记录计算的平均分、最低分、最高分、异常状态记录数，并说明统计单位。",
+      "within_budget": true,
+      "compression_stats": {
+        "mode": "anomaly",
+        "counter": "estimated",
+        "tables": 1,
+        "source_rows": 720,
+        "retained_rows": 5,
+        "target_rows": 1,
+        "omitted_rows": 715,
+        "char_ratio": 51.61876127480457,
+        "token_ratio": 30.035909920876446,
+        "reason": "target_met",
+        "missing_selectors": [],
+        "source_sha256": "448745793e14b4a41b85f12779da63e605531410d0f9f2ccd2cb24af8f9907e7",
+        "output_format": "edu-context/2"
+      },
+      "variants": {
+        "raw": {
+          "prompt_file": "overall.raw.prompt.txt",
+          "context_chars": 429210,
+          "context_tokens": 98698,
+          "prompt_tokens": 99047
+        },
+        "truncated": {
+          "prompt_file": "overall.truncated.prompt.txt",
+          "context_chars": 14049,
+          "context_tokens": 3286,
+          "prompt_tokens": 3635
+        },
+        "compressed": {
+          "prompt_file": "overall.compressed.prompt.txt",
+          "context_chars": 8315,
+          "context_tokens": 3286,
+          "prompt_tokens": 3636
+        }
+      }
+    },
+    {
+      "id": "student",
+      "task": "分析学号 S119 的成绩异常，保留该学生六次考试按日期排序的成绩、日期及状态，给出异常日期和异常成绩。只回答已标记的异常。",
+      "within_budget": true,
+      "compression_stats": {
+        "mode": "anomaly",
+        "counter": "estimated",
+        "tables": 1,
+        "source_rows": 720,
+        "retained_rows": 10,
+        "target_rows": 6,
+        "omitted_rows": 710,
+        "char_ratio": 49.20440215522183,
+        "token_ratio": 28.175278332857552,
+        "reason": "target_met",
+        "missing_selectors": [],
+        "source_sha256": "448745793e14b4a41b85f12779da63e605531410d0f9f2ccd2cb24af8f9907e7",
+        "output_format": "edu-context/2"
+      },
+      "variants": {
+        "raw": {
+          "prompt_file": "student.raw.prompt.txt",
+          "context_chars": 429210,
+          "context_tokens": 98698,
+          "prompt_tokens": 99047
+        },
+        "truncated": {
+          "prompt_file": "student.truncated.prompt.txt",
+          "context_chars": 15031,
+          "context_tokens": 3502,
+          "prompt_tokens": 3851
+        },
+        "compressed": {
+          "prompt_file": "student.compressed.prompt.txt",
+          "context_chars": 8723,
+          "context_tokens": 3503,
+          "prompt_tokens": 3852
+        }
+      }
+    },
+    {
+      "id": "compare",
+      "task": "对比甲班和乙班的数学考试情况。分别列出各班考试记录数、成绩总和、平均分，并指出平均分更高的班级。平均分按考试记录计算。",
+      "within_budget": false,
+      "compression_stats": {
+        "mode": "compare",
+        "counter": "estimated",
+        "tables": 1,
+        "source_rows": 720,
+        "retained_rows": 720,
+        "target_rows": 720,
+        "omitted_rows": 0,
+        "char_ratio": 14.685393642864474,
+        "token_ratio": 6.348771388138428,
+        "reason": "protected_content_exceeds_budget",
+        "missing_selectors": [],
+        "source_sha256": "448745793e14b4a41b85f12779da63e605531410d0f9f2ccd2cb24af8f9907e7",
+        "output_format": "edu-context/2"
+      },
+      "variants": {
+        "raw": {
+          "prompt_file": "compare.raw.prompt.txt",
+          "context_chars": 429210,
+          "context_tokens": 98698,
+          "prompt_tokens": 99125
+        },
+        "truncated": {
+          "prompt_file": "compare.truncated.prompt.txt",
+          "context_chars": 67445,
+          "context_tokens": 15546,
+          "prompt_tokens": 15973
+        },
+        "compressed": {
+          "prompt_file": "compare.compressed.prompt.txt",
+          "context_chars": 29227,
+          "context_tokens": 15546,
+          "prompt_tokens": 15973
+        }
+      }
+    }
+  ],
+  "serialization_ablation": {
+    "description": "All records retained, only table/common-field encoding; not a model evaluation",
+    "original_chars": 429210,
+    "compressed_chars": 29032,
+    "original_tokens": 98698,
+    "compressed_tokens": 15483,
+    "within_budget": false,
+    "mode": "lossless",
+    "counter": "estimated",
+    "tables": 1,
+    "source_rows": 720,
+    "retained_rows": 720,
+    "target_rows": 0,
+    "omitted_rows": 0,
+    "char_ratio": 14.784031413612565,
+    "token_ratio": 6.374604404831105,
+    "reason": "protected_content_exceeds_budget",
+    "missing_selectors": [],
+    "source_sha256": "448745793e14b4a41b85f12779da63e605531410d0f9f2ccd2cb24af8f9907e7",
+    "output_format": "edu-context/2"
+  }
+}

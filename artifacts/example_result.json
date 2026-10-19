@@ -1,0 +1,25 @@
+{
+  "original_chars": 429210,
+  "compressed_chars": 8315,
+  "original_tokens": 98698,
+  "compressed_tokens": 3286,
+  "triggered": true,
+  "within_budget": true,
+  "target_tokens": 9869,
+  "stats": {
+    "mode": "anomaly",
+    "counter": "estimated",
+    "tables": 1,
+    "source_rows": 720,
+    "retained_rows": 5,
+    "target_rows": 1,
+    "omitted_rows": 715,
+    "char_ratio": 51.61876127480457,
+    "token_ratio": 30.035909920876446,
+    "reason": "target_met",
+    "missing_selectors": [],
+    "source_sha256": "448745793e14b4a41b85f12779da63e605531410d0f9f2ccd2cb24af8f9907e7",
+    "output_format": "edu-context/2"
+  },
+  "task": "生成整体学情报告，统计考试记录总数、成绩总和、按考试记录计算的平均分、最低分、最高分、异常状态记录数，并说明统计单位。"
+}
