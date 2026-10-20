@@ -2,6 +2,8 @@
 
 EduContext 放在 LMS 工具返回与最终回答模型之间。程序负责结构、统计与完整性，模型可选地负责从长评语中选择任务相关的原文片段，最终回答模型负责解释。此次适配不改变上游查询，也不自动补齐分页。
 
+本文描述既有 `compress_lms`。v0.2 新增的 `compress_planned` 按“概况 → 模型或手写计划 → 校验 → 精确统计与记录证据 → 预算”执行，接入方式见[通用规划管线](planned-pipeline.md)。
+
 ## 输入与路由
 
 调用方传入用户问题、原始 JSON、可选目标学号、来源完整性和 token 计数器。通用数据继续使用 `compress`；`data.studentList` 与 `data.activityList` 使用 `compress_lms`。前者的评语位于 `extra.stuHomeworkTeacherComment`，后者位于 `activityExtra.stuHomeworkTeacherComment`。

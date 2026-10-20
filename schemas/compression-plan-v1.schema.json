@@ -1,0 +1,50 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:educontext:compression-plan:1",
+  "title": "EduContext compression plan v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["version", "status", "questions", "information_needs", "tables"],
+  "properties": {
+    "version": {"const": 1, "type": "integer"},
+    "status": {"enum": ["ready", "needs_clarification", "unsupported"]},
+    "questions": {"$ref": "#/$defs/explanations"},
+    "information_needs": {"$ref": "#/$defs/explanations"},
+    "tables": {"type": "array", "items": {"$ref": "#/$defs/table"}}
+  },
+  "allOf": [
+    {
+      "if": {"properties": {"status": {"const": "ready"}}},
+      "then": {"properties": {"questions": {"maxItems": 0}, "information_needs": {"minItems": 1}}},
+      "else": {"properties": {"questions": {"minItems": 1}, "tables": {"maxItems": 0}}}
+    }
+  ],
+  "$defs": {
+    "explanations": {"type": "array", "items": {"type": "string", "minLength": 1, "maxLength": 1000}},
+    "table": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "roles", "aggregates", "texts"],
+      "properties": {
+        "path": {"type": "string"},
+        "roles": {"type": "object", "additionalProperties": {"enum": ["entity", "metric", "dimension", "status", "time", "text", "unknown"]}},
+        "texts": {"type": "object", "additionalProperties": {"enum": ["retain", "extract", "omit"]}},
+        "aggregates": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["field", "op", "unit", "scale", "group_by"],
+            "properties": {
+              "field": {"type": "string"},
+              "op": {"const": "stats"},
+              "unit": {"type": "string", "minLength": 1},
+              "scale": {"type": "string", "minLength": 1},
+              "group_by": {"type": "array", "uniqueItems": true, "items": {"type": "string"}}
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -2,6 +2,8 @@
 
 2026 年 10 月扩展：LMS 与来源完整性协议见文末。显式恢复或声明不完整时，小输入也可能输出完整性包装，不适用普通透传说明。
 
+v0.2 的显式规划入口另用 `educontext.planned/1`，不改变此处旧格式；其表解码、原文出处、遗漏和失败状态见[新协议与接入](planned-pipeline.md)。计划结构见[JSON Schema](../schemas/compression-plan-v1.schema.json)。
+
 未触发压缩时 `context` 就是原始 JSON。防膨胀退化时同样返回原始 JSON，`Result.stats.output_format=original_json`，不能把它当作压缩封装解析。正常压缩输出为以下结构：
 
 | 字段 | 意义 |

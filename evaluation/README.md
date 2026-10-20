@@ -95,3 +95,9 @@ python -m unittest evaluation.test_runner -v
 - `context_chars`、`context_tokens`、`prompt_tokens`：输入规模；压缩率见 manifest。
 
 本评测是 3 题小规模 smoke evaluation。应进一步加入多工具重叠、缺失值、不同评分尺度、长尾实体、开放问题等业务集，多次重复运行并人工审查；原始版本本身也可能算错。不得把确定性校验通过率、未运行项或模拟数据结果写成真实业务 LLM 正确率。
+
+## v0.2 通用规划验收
+
+`python -m evaluation.planned_acceptance --output .test-tmp/planned` 离线检查两份公开数据、固定原句与保护条件。真实模型测试需显式增加 `--live --env-file <调用方指定文件>`，并把输出放在被忽略的 `evaluation/private_business_*` 目录。
+
+`python -m evaluation.export_planned --input <私有结果目录> --output <公开汇总路径>` 只导出检查结果、哈希与用量，拒绝把未通过门槛的结果导出为通过版本。具体范围和成本见 [v0.2 验收报告](../docs/planned-evaluation-2026-10-20.md)。

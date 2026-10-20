@@ -35,7 +35,8 @@ class ModelClientTests(unittest.TestCase):
                 client(system='system',request={'task':'different'})
 
     def test_incomplete_and_nonobject_outputs_rejected(self):
-        for reply in (Reply('length'),Reply(content='[]'),Reply(content='invalid')):
+        for reply in (Reply('length'), Reply(content='[]'), Reply(content='invalid'),
+                      Reply(content='{"x":1,"x":2}'), Reply(content='{"x":NaN}')):
             with patch('edu_context.model_client.build_opener') as opener:
                 opener.return_value.open.return_value = reply
                 client = JSONModelClient(api_key='x',base_url='https://example.com',model='test')

@@ -1,10 +1,10 @@
 # EduContext
 
-教学 Agent 工具结果进入最终 LLM 前的轻量 Python 上下文压缩模块。**核心零运行时第三方依赖，不部署服务；长评语可显式启用额外 LLM 选取原文证据。** 默认压缩不调用模型。
+教学 Agent 工具结果进入最终 LLM 前的轻量 Python 上下文压缩模块。**核心零运行时第三方依赖，不部署服务；可显式启用模型规划与长文本原文证据选择。** 默认压缩不调用模型。
 
 把结构化记录转换成可核对的统计、实体目录和原始证据行。关键内容过多时保留内容并报告预算不足，不承诺所有 JSON 都能压缩十倍。
 
-组件独立于下游报告 Skill：输入用户任务、JSON 和配置，输出精简上下文；报告 Agent 再结合自己的 Skill 生成 HTML。当前任务判断是规则与显式参数，尚未实现 LLM 计划生成器。下一步的完整设计与验收要求见[改进路线图](docs/roadmap.md)。
+组件独立于下游报告 Skill：输入用户任务、JSON 和配置，输出精简上下文；报告 Agent 再结合自己的 Skill 生成 HTML。v0.2 新增显式入口 `compress_planned`，支持模型生成受约束计划、严格校验、通用字段映射和逐记录原文证据。原有入口继续采用规则与显式参数。见[规划管线接入](docs/planned-pipeline.md)、[验收约定](docs/acceptance-v0.2.md)和[阶段路线图](docs/roadmap.md)。
 
 ## 克隆与复现
 
@@ -15,6 +15,7 @@ python -m pip install -e .
 python -m unittest discover -s tests -v
 python -m unittest evaluation.test_runner -v
 python -m scripts.check_public_data
+python -m evaluation.planned_acceptance --output .test-tmp/planned
 ```
 
 上述测试与数据验证不调用模型 API。建议在虚拟环境中运行。仓库包含两份[生产来源脱敏数据](datasets/README.md)，可跨设备复现结构与数值检查；原始数据、身份映射和私有模型缓存不公开。脱敏改变 ID、时间及少量文本，历史模型评测数字与公开样本验证分开记录。
@@ -22,6 +23,8 @@ python -m scripts.check_public_data
 2026 年 10 月新增 `compress_lms`，适配实际 `data.studentList` / `data.activityList`，保留全部收到的完整结构化记录；支持截断 JSON 恢复与可选评语摘录。[完整流程](docs/pipeline.md) · [两份业务数据评测](docs/business-evaluation-2026-10-12.md) · [接入示例](examples/lms_integration.py)。
 
 大文件 376 条记录：纯统计 17.02 倍、指定学生 16.39 倍、评语摘录 14.69 倍（o200k 编码）。指定学生配对测试为原文 6/14、压缩 14/14、等预算截断 1/14；仅一次小样本测试，不代表生产准确率。完整保留全部评语只有 1.16 倍。小文件 11 条活动未达到字符阈值，原样透传。
+
+上述数字属于 10 月 12 日的 LMS 历史链路。v0.2 的新计划格式、调用成本和冻结任务结果分别记录在[新管线验收报告](docs/planned-evaluation-2026-10-20.md)，不与旧实验混用。
 
 ## 快速使用
 

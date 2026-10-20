@@ -4,8 +4,8 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "edu-context"
-version = "0.1.0"
-description = "Deterministic, task-aware compression of educational JSON tool results"
+version = "0.2.0"
+description = "Task-aware JSON context compression with validated plans and exact evidence"
 requires-python = ">=3.10"
 dependencies = []
 

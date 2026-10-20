@@ -11,6 +11,7 @@ from pathlib import Path
 from time import perf_counter
 from urllib.error import HTTPError, URLError
 from urllib.request import Request, build_opener, HTTPRedirectHandler
+from .recovery import strict_loads
 
 
 class _NoRedirect(HTTPRedirectHandler):
@@ -27,6 +28,8 @@ class JSONModelClient:
                  timeout=180, max_calls=30, extra_body=None):
         if not base_url.startswith("https://"):
             raise ValueError("Model endpoint must use HTTPS")
+        if type(max_calls) is not int or max_calls < 0 or not 0 < timeout <= 600:
+            raise ValueError("Invalid call or timeout limit")
         self._key, self.base_url, self.model = api_key, base_url.rstrip("/"), model
         self.cache_dir = Path(cache_dir) if cache_dir else None
         self.timeout, self.max_calls = timeout, max_calls
@@ -73,8 +76,8 @@ class JSONModelClient:
             raise ModelCallError("Model did not finish a complete JSON response")
         content = choices[0].get("message", {}).get("content")
         try:
-            result = json.loads(content)
-        except (TypeError, json.JSONDecodeError):
+            result = strict_loads(content)
+        except (TypeError, ValueError):
             raise ModelCallError("Model output is not valid JSON") from None
         if not isinstance(result, dict):
             raise ModelCallError("Model JSON output must be an object")
